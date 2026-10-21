@@ -1,11 +1,19 @@
-# KihaWorld Launcher — releases
+# KihaWorld Launcher
 
-Release feed for the KihaWorld Launcher. Nothing is built here: the GitLab
-pipeline of the launcher repository publishes a release per tag with
+Download the newest version from
+[Releases](https://github.com/UADominator/LauncherRelease/releases/latest).
+Install instructions and the source code are in the
+[launcher repository](https://gitlab.com/dominator_git/infrastructure/launcher).
 
-* `KihaWorldLauncher_<version>_x64-setup.exe` — the Windows installer
-* `KihaWorldLauncher_<version>_x64-setup.exe.sig` — its updater signature
-* `latest.json` — what installed launchers poll to learn about this release
-* the Linux `.deb` and AppImage
+## Code signing policy
 
-The launcher reads `https://github.com/UADominator/LauncherRelease/releases/latest/download/latest.json`.
+Free code signing provided by [SignPath.io](https://about.signpath.io),
+certificate by [SignPath Foundation](https://signpath.org).
+
+- The Windows exe has an Authenticode signature from SignPath Foundation.
+- The Linux packages have no code signature.
+- The `.sig` files and `latest.json` let the launcher check its own updates.
+
+The launcher CI pipeline builds and publishes every file. Team roles and the
+privacy policy are in the
+[launcher repository](https://gitlab.com/dominator_git/infrastructure/launcher#code-signing-policy).
